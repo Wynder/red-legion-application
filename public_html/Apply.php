@@ -1,5 +1,8 @@
 <?php
-session_start()
+session_start();
+include( __DIR__ . '/lib/resources.php' );
+include( __DIR__ . '/lib/discord.php' );
+
 //Logic flow for the application process.
 // 1. Direct user to apply on the RSI site.
 // 2. Authenticate with Discord.
