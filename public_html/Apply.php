@@ -1,7 +1,10 @@
 <?php
+session_destroy();
 session_start();
 include( __DIR__ . '/lib/resources.php' );
 include( __DIR__ . '/lib/discord.php' );
+
+d($_SESSION);
 
 //Logic flow for the application process.
 // 1. Direct user to apply on the RSI site.
