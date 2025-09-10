@@ -1,0 +1,52 @@
+name: Deploy to TRL Test (Apache)
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch: {}   # allows manual runs from Actions tab
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Load SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+
+      - name: Trust server host key
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy over SSH
+        run: |
+          ssh -p "${{ secrets.SSH_PORT }}" "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" bash -s <<'EOF'
+          set -euo pipefail
+          cd /var/www/trl.citadelspace.com
+
+          # Update the working copy to the pushed commit
+          git fetch origin main
+          git reset --hard origin/main
+
+          # If you use Composer, install (safe to leave; it only runs if present)
+          if [ -f composer.json ]; then
+            composer install --no-dev --prefer-dist --optimize-autoloader
+          fi
+
+          # Clear PHP OPcache if available
+          php -r 'function_exists("opcache_reset") && opcache_reset();'
+
+          # If you changed Apache/site configs and your deploy user has sudo:
+          # sudo systemctl reload apache2
+          EOF
