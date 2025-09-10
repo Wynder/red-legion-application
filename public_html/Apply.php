@@ -1,21 +1,20 @@
 <?php
-require __DIR__ . '/includes/header.php';
-include("../lib/config.php");
-
-//session_destroy();
-//session_start();
-
-//This is a test!!
-
+session_start()
 //Logic flow for the application process.
-unset($error);
+// 1. Direct user to apply on the RSI site.
+// 2. Authenticate with Discord.
+//	a. Upon Discord authentication, we pull their joined 
+//		servers to check against the blacklist.
+// 3. Fill out application form.
+// 4. Application submitted, join our Discord server.
 
+//Trap for any error messages.
 if($_GET['error'])
 {
 	$error = $_GET['error'];
 }
 
-//This should run the first time a person visits the page.
+//If it's the first visit to the page, start with step 1.
 if(!$_SESSION['Application']['Step'])
 {
 	$_SESSION['Application']['Step'] = 1;
@@ -23,12 +22,14 @@ if(!$_SESSION['Application']['Step'])
 else
 {
 	//If there's a value in Application/Step, check to see
-	//if they're onto the next step.
+	//if they're onto the next step (ns).
 	if($_POST['ns'])
 	{
 		$_SESSION['Application']['Step'] = $_POST['ns'];
 	}
 
+	//If they're on step 2 and there's a code in the URL,
+	//this is the return from Discord authentication.
 	if($_SESSION['Application']['Step'] == 2 && $_GET['code'])
 	{
 		//This runs after authentication.
