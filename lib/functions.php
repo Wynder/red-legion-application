@@ -1,8 +1,7 @@
 <?php
-/* Functions v.1.0
- * This file contains miscellaneous functions used throughout the application.
- * @author : Tealstone  
- */
+/* Functions
+ * This file contains various functions used throughout the application.
+ * @author : Tealstone
 
 /** 
  * d()
