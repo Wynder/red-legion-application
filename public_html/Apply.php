@@ -1,8 +1,8 @@
 <?php
 session_start();
-include( __DIR__ . '/lib/resources.php' );
-include( __DIR__ . '/lib/discord.php' );
-include( '../lib/functions.php' );
+include( __DIR__ . '../lib/resources.php' );
+include( __DIR__ . '../lib/discord.php' );
+include( __DIR__ . '../lib/functions.php' );
 
 d($_SESSION);
 
