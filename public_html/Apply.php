@@ -78,7 +78,7 @@ switch($_SESSION['Application']['Step'])
 {
 	case 1: 
 		$tabTitle = "Step 1: RSI Site Application";
-		$tabContent = "<h3>Apply on RSI's Site</h3><ol><li><strong>For the first step of the process, please visit <a href='https://robertsspaceindustries.com/orgs/CSC' target='_blank'>Citadel Space's Organization page</a> on the RSI website and click the \"Join Us Now!\" button.</strong></li></ol>  This will allow us to confirm your RSI ID and, once accepted, you'll be connected to the corporation in the game.  Citadel Space is not an \"Exclusive Membership\" group -- that means you are free to join other organizations and enjoy the game how you wish to enjoy it!<br>&nbsp<p>Once you've completed this step, click below to move on to the next step!</p><form method='post' action='Apply'><input type='submit' class='btn btn-lg btn-primary' value='Next Step'><input type='hidden' name='ns' value='2'></form>";
+		$tabContent = "<h3>Apply on RSI's Site</h3><ol><li><strong>For the first step of the process, please visit <a href='https://robertsspaceindustries.com/orgs/REDLEGN' target='_blank'>The Red Legion's organization page</a> on the RSI website and click the \"Join Us Now!\" button.</strong></li></ol>  This will allow us to confirm your RSI ID and, once accepted, you'll be connected to the corporation in the game.  The Red Legion is not an \"Exclusive Membership\" group -- that means you are free to join other organizations and enjoy the game how you wish to enjoy it!<br>&nbsp<p>Once you've completed this step, click below to move on to the next step!</p><form method='post' action='Apply'><input type='submit' class='btn btn-lg btn-primary' value='Next Step'><input type='hidden' name='ns' value='2'></form>";
 		break;
 	case 2:
 		$tabTitle = 'Step 2: Discord Authentication';
@@ -87,7 +87,7 @@ switch($_SESSION['Application']['Step'])
 
         case 3:
                 $tabTitle = 'Step 3: Submit Your Application';
-		$tabContent = "<h3>Authenticate with Discord</h3><ol><li value='3'><strong>Submit Your Application.</strong></li></ol> We have most of the information we need now, just a couple additional questions and you'll be good to go! Please bear in mind that in order to apply, you must:<ul><li>Be 18 years of age.</li><li>Agree to no trolling, scamming, or trash talk.</li><li>Represent Citadel Space with professionalism and respect.</ul><p>
+		$tabContent = "<h3>Authenticate with Discord</h3><ol><li value='3'><strong>Submit Your Application.</strong></li></ol> We have most of the information we need now, just a couple additional questions and you'll be good to go! Please bear in mind that in order to apply, you must:<ul><li>Be 18 years of age.</li><li>Agree to no trolling, scamming, or trash talk.</li><li>Represent The Red Legion with professionalism and respect.</ul><p>
 
 			<table>
 <tbody>
@@ -158,7 +158,7 @@ switch($_SESSION['Application']['Step'])
 				<br>
 
 				    <label for='Bio'>Biography:</label><br>
-				    <textarea name='Bio' style='width:100%' rows='5' placeholder='Tell us about yourself and your interest in Citadel Space!' required></textarea>
+				    <textarea name='Bio' style='width:100%' rows='5' placeholder='Tell us about yourself and your interest in The Red Legion!' required></textarea>
 
 				<br>
 				
@@ -190,11 +190,9 @@ switch($_SESSION['Application']['Step'])
 			case 5: 
 				unset($_SESSION['Application']);
 				$tabTitle = 'Step 4: Join Discord';
-				$tabContent = "<h3>Join our Discord</h3>Your application has been submitted and will be reviewed as soon as possible!  The final step is for you to join our Discord server and introduce yourself -- we're looking forward to meeting you!<br>&nbsp;<br><center><a href='https://discord.gg/JZxSPTt' target='_blank' class='btn btn-lg btn-primary'><i class='fa-brands fa-discord' style='position:relative; top:5px;'></i>Join Citadel Space Corporation's Discord Server</a></center>";
+				$tabContent = "<h3>Join our Discord</h3>Your application has been submitted and will be reviewed as soon as possible!  The final step is for you to join our Discord server and introduce yourself -- we're looking forward to meeting you!<br>&nbsp;<br><center><a href='https://discord.gg/JZxSPTt' target='_blank' class='btn btn-lg btn-primary'><i class='fa-brands fa-discord' style='position:relative; top:5px;'></i>Join The Red Legion's Discord Server</a></center>";
 			break;
 }
-
-
 
 ?>
 
@@ -205,40 +203,13 @@ a:visited {color:white}
 <body id="default-page" class="dark">
     <!-- header begin -->
     <header>
-        <div class="container">
-            <span id="menu-btn"></span>
 
-            <div id="logo">
-                <div class="inner">
-                    <a href="/">
-                        <img src="images/logo2.png" alt="logo"></a>
-                </div>
-            </div>
-
-
-
-                <!-- mainmenu begin -->
-                <nav>
-                    <ul id="mainmenu">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/#page-about">About Us</a></li>
-                        <li><a href="/#page-services">Services</a></li>
-                        <li><a href="/#section-careers">Careers</a></li>
-                        <li><a href="Apply">Apply</a></li>
-                        <li><a href="<?php echo $auth_url; ?>"><i class='fa-brands fa-discord' style='position:relative; top:10px;'></i> Staff Login</a></li>
-                    </ul>
-                </nav>
-                <!-- mainmenu close -->
-
-
-        </div>
     </header>
     <!-- header close -->
 
     <!-- subheader -->
     <section id="subheader" class="jarallax">
-        <img src="images/bg-blur-1.jpg" class="jarallax-img" alt="">
-        <h1>Apply to <span class="id-color">Citadel Space</span></h1>
+        <h1>Apply to <span class="id-color">The Red Legion</span></h1>
     </section>
     <!-- subheader close -->
 
@@ -295,6 +266,4 @@ a:visited {color:white}
 </script>
 
 
-<?php
-	require __DIR__ . '/includes/footer.php';
-?>
+<script src='https://www.google.com/recaptcha/api.js' async defer></script>
