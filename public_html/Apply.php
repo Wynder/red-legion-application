@@ -5,6 +5,8 @@ include("../lib/config.php");
 //session_destroy();
 //session_start();
 
+//This is a test!!
+
 //Logic flow for the application process.
 unset($error);
 
