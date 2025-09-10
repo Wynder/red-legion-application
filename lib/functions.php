@@ -2,12 +2,13 @@
 /* Functions
  * This file contains various functions used throughout the application.
  * @author : Tealstone
-
-/** 
- * d()
- *
- * Show debug information only to people in the $_DEBUG_USERS array.
  */
+
+// d()
+//
+// Show debug information only to people in the $_DEBUG_USERS array.
+// Accepts any type of variable, including arrays and objects.
+// Recursively converts objects to arrays for easier viewing.
 function d($display)
 {
 
