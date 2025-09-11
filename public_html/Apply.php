@@ -13,6 +13,7 @@ if(!isset($_SESSION['state']))
 
 //Have a link to reset the process.
 echo "<a href='reset.php'>Reset Application Process</a>";
+
 d($_SESSION);
 
 //Logic flow for the application process.
@@ -54,21 +55,18 @@ else
 			exit;
 		}
 
-		//This runs after authentication.
+		//This runs after authentication to get the access token.
+		//The access token allows us to make requests on behalf of the user.
 		if(!$_SESSION['access_token'])
 		{
 			init($apply_redirect_url, $client_id, $secret_id, $bot_token);
 		}
 
-		//See if the access token is set.
-		d($_SESSION);
-
 		//Get user information and guilds.
 		get_user();
 		$guilds = get_guilds();
 
-		//Show raw data and clean data with the guild name and icon
-		//d($guilds);
+		//Show the guilds the user is in.
 		foreach($guilds as $g)
 		{
 			echo "<h2>" . $g['name'] . "</h2><br>";
@@ -186,9 +184,9 @@ switch($_SESSION['Application']['Step'])
 				    <label for='Division'>Division Preference (<em>This is your primary interest</em>):</label>
 
 				    <select name='Division' class='form-control'>
-					<option value='Adam and Eves'>Adam & Eves - Industry, Mining, and Logistics</option>
-					<option value=\"Hell's Angels\">Hell's Angels - Protective, Privateer, and Security Services</option>
-					<option value='Panda Bears'>Panda Bears - Intelligence, Exploration, and Covert Operations</option>
+					<option value='1'>Task Force Red - Air and Ground Combat Operations</option>
+					<option value='2'>Mining Division - Breaking Rocks and Making Money</option>
+					<option value='3'>Salvage Division - Reclaiming RMC</option>
 				    </select>
 				
 				<br>
