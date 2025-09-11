@@ -81,13 +81,10 @@ else
 				$_SESSION['Application']['DiscordID'] = $_SESSION['user']['id'];
 				$_SESSION['Application']['DiscordUsername'] = $_SESSION['user']['username'];
 	
-				if($_SESSION['user']['avatar'] != "")
+				//If the user has no avatar, set a default one.
+				if($_SESSION['user']['avatar'] == "")
 				{
-					$_SESSION['Application']['avatar'] = "https://cdn.discordapp.com/avatars/{$_SESSION['user']['id']}/{$_SESSION['user']['avatar']}" . is_animated($member['user']['avatar']);
-				}
-				else
-				{
-					$_SESSION['Application']['avatar'] = 'https://cdn.discordapp.com/embed/avatars/0.png';
+					$_SESSION['user']['avatar'] = 'https://cdn.discordapp.com/embed/avatars/0.png';
 				}
 			}
 
