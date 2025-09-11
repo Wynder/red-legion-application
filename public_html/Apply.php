@@ -4,6 +4,11 @@ include( __DIR__ . '/../lib/resources.php' );
 include( __DIR__ . '/../lib/discord.php' );
 include( __DIR__ . '/../lib/functions.php' );
 
+if(!isset($_SESSION['state']))
+{
+	gen_state();
+}
+
 d($_SESSION);
 
 //Logic flow for the application process.

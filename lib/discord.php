@@ -7,7 +7,6 @@
  * Modified by Tealstone for The Red Legion.
  * 
  */
-session_start();
 
 // Setting the base url for API requests
 $GLOBALS['base_url'] = "https://discord.com";
