@@ -230,10 +230,6 @@ switch($_SESSION['Application']['Step'])
 
 ?>
 
-<style>
-a:visited {color:white}
-</style>
-
 <body id="default-page" class="dark">
     <!-- header begin -->
     <header>
