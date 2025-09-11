@@ -41,6 +41,10 @@ else
 		//This runs after authentication.
 		init($apply_redirect_url, $client_id, $secret_id, $bot_token);
 		get_user();
+		$guilds = get_guilds();
+
+		d($guilds);
+		exit;
 
 		if($_SESSION['user']['id'] || $_SESSION['Application']['DiscordID'])
 		{
