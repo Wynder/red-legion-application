@@ -65,6 +65,7 @@ else
 		//Get user information and guilds.
 		get_user();
 		$guilds = get_guilds();
+		d($guilds);
 
 		//Show the guilds the user is in.
 		foreach($guilds as $g)
