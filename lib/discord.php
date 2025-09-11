@@ -27,6 +27,7 @@ function gen_state()
 // A function to generate oAuth2 URL for logging in
 function url($clientid, $redirect, $scope)
 {
+    echo "URL FUNCTION";
     $state = gen_state();
     return 'https://discordapp.com/oauth2/authorize?response_type=code&client_id=' . $clientid . '&redirect_uri=' . $redirect . '&scope=' . $scope . "&state=" . $state;
 }
