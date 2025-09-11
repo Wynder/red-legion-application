@@ -196,9 +196,9 @@ switch($_SESSION['Application']['Step'])
 
 				<br>
 				
-				    <input type='hidden' name='DiscordID' value='{$_SESSION['Application']['DiscordID']}'>
-				    <input type='hidden' name='DiscordUsername' value='{$_SESSION['Application']['DiscordUsername']}'>
-				    <input type='hidden' name='Avatar' value='{$_SESSION['Application']['avatar']}'>
+				    <input type='hidden' name='DiscordID' value='{$_SESSION['user']['id']}'>
+				    <input type='hidden' name='DiscordUsername' value='{$_SESSION['user']['username']}'>
+				    <input type='hidden' name='Avatar' value='{$_SESSION['user']['avatar']}'>
 
 				<br>
 
@@ -211,8 +211,8 @@ switch($_SESSION['Application']['Step'])
 			</td>
 			<td valign='top' tdalign='center' style='padding:10px;'> 
 				<center>
-				<h3>Welcome, {$_SESSION['Application']['DiscordUsername']}!</h3><br>
-				<img src='{$_SESSION['Application']['avatar']}'>
+				<h3>Welcome, {$_SESSION['user']['username']}!</h3><br>
+				<img src='https://cdn.discordapp.com/avatars/{$_SESSION['user']['id']}/{$_SESSION['user']['avatar']}.png'>
 				</center>
 			</td>
 			</tr>
