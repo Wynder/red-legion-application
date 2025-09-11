@@ -17,8 +17,6 @@ $GLOBALS['bot_token'] = null;
 // A function to generate a random string to be used as state | (protection against CSRF)
 function gen_state()
 {
-
-    echo "THIS FILE HAS BEEN INCLUDED";
     $_SESSION['state'] = bin2hex(openssl_random_pseudo_bytes(12));
     return $_SESSION['state'];
 }
@@ -26,8 +24,7 @@ function gen_state()
 // A function to generate oAuth2 URL for logging in
 function url($clientid, $redirect, $scope)
 {
-    $state = gen_state();
-    return 'https://discordapp.com/oauth2/authorize?response_type=code&client_id=' . $clientid . '&redirect_uri=' . $redirect . '&scope=' . $scope . "&state=" . $state;
+    return 'https://discordapp.com/oauth2/authorize?response_type=code&client_id=' . $clientid . '&redirect_uri=' . $redirect . '&scope=' . $scope . "&state=" . $_SESSION['state'];
 }
 
 // A function to initialize and store access token in SESSION to be used for other requests
