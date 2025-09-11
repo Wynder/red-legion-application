@@ -19,6 +19,8 @@ $GLOBALS['bot_token'] = null;
 function gen_state()
 {
     $_SESSION['state'] = bin2hex(openssl_random_pseudo_bytes(12));
+
+    echo "HERE: " . $_SESSION['state'];
     return $_SESSION['state'];
 }
 
