@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_destroy()
 include( __DIR__ . '/../lib/resources.php' );
 include( __DIR__ . '/../lib/discord.php' );
 include( __DIR__ . '/../lib/functions.php' );
