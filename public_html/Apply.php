@@ -51,7 +51,7 @@ else
 		if($_GET['state'] != $_SESSION['state'])
 		{
 			$error = '<strong>Security Check Failed.</strong> The state returned from Discord did not match the one we sent.';
-			exit
+			exit;
 		}
 
 		//This runs after authentication.
