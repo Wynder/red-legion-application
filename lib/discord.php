@@ -9,8 +9,6 @@
  */
 session_start();
 
-echo "THIS FILE HAS BEEN INCLUDED";
-
 // Setting the base url for API requests
 $GLOBALS['base_url'] = "https://discord.com";
 
@@ -20,6 +18,8 @@ $GLOBALS['bot_token'] = null;
 // A function to generate a random string to be used as state | (protection against CSRF)
 function gen_state()
 {
+
+    echo "THIS FILE HAS BEEN INCLUDED";
     $_SESSION['state'] = bin2hex(openssl_random_pseudo_bytes(12));
     return $_SESSION['state'];
 }
