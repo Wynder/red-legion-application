@@ -55,7 +55,10 @@ else
 		}
 
 		//This runs after authentication.
-		init($apply_redirect_url, $client_id, $secret_id, $bot_token);
+		if(!$_SESSION['access_token'])
+		{
+			init($apply_redirect_url, $client_id, $secret_id, $bot_token);
+		}
 
 		//See if the access token is set.
 		d($_SESSION);
