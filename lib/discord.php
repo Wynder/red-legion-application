@@ -9,6 +9,8 @@
  */
 session_start();
 
+echo "THIS FILE HAS BEEN INCLUDED";
+
 // Setting the base url for API requests
 $GLOBALS['base_url'] = "https://discord.com";
 
@@ -19,15 +21,12 @@ $GLOBALS['bot_token'] = null;
 function gen_state()
 {
     $_SESSION['state'] = bin2hex(openssl_random_pseudo_bytes(12));
-
-    echo "HERE: " . $_SESSION['state'];
     return $_SESSION['state'];
 }
 
 // A function to generate oAuth2 URL for logging in
 function url($clientid, $redirect, $scope)
 {
-    echo "URL FUNCTION";
     $state = gen_state();
     return 'https://discordapp.com/oauth2/authorize?response_type=code&client_id=' . $clientid . '&redirect_uri=' . $redirect . '&scope=' . $scope . "&state=" . $state;
 }
