@@ -10,6 +10,9 @@ if(!isset($_SESSION['state']))
 	gen_state();
 }
 
+//Have a link to reset the process.
+echo "<div style='position:absolute; top:10px; right:10px;'><a href='reset.php' class='btn btn-danger'>Reset Application Process</a></div>";
+
 d($_SESSION);
 
 //Logic flow for the application process.
@@ -44,6 +47,13 @@ else
 	//this is the return from Discord authentication.
 	if($_SESSION['Application']['Step'] == 2 && $_GET['code'])
 	{
+		//Validate the state to prevent CSRF.
+		if($_GET['state'] != $_SESSION['state'])
+		{
+			$error = '<strong>Security Check Failed.</strong> The state returned from Discord did not match the one we sent.';
+			exit
+		}
+
 		//This runs after authentication.
 		init($apply_redirect_url, $client_id, $secret_id, $bot_token);
 
