@@ -57,6 +57,9 @@ else
 		//This runs after authentication.
 		init($apply_redirect_url, $client_id, $secret_id, $bot_token);
 
+		//See if the access token is set.
+		d($_SESSION);
+
 		//Get user information and guilds.
 		get_user();
 		$guilds = get_guilds();
@@ -65,7 +68,7 @@ else
 		//d($guilds);
 		foreach($guilds as $g)
 		{
-			echo $g['name'] . "<br>";
+			echo "<h2>" . $g['name'] . "</h2><br>";
 			echo "<img src='https://cdn.discordapp.com/icons/{$g['id']}/{$g['icon']}.png'><br><br>";
 		}		
 
