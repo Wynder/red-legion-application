@@ -1,4 +1,5 @@
 <?php
+session_destroy();
 session_start();
 include( __DIR__ . '/../lib/resources.php' );
 include( __DIR__ . '/../lib/discord.php' );
