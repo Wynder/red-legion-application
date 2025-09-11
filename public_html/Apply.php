@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include( __DIR__ . '/../lib/resources.php' );
 include( __DIR__ . '/../lib/discord.php' );
 include( __DIR__ . '/../lib/functions.php' );
@@ -45,13 +46,18 @@ else
 	{
 		//This runs after authentication.
 		init($apply_redirect_url, $client_id, $secret_id, $bot_token);
+
+		//Get user information and guilds.
 		get_user();
 		$guilds = get_guilds();
 
+		//Show raw data and clean data with the guild name and icon
 		d($guilds);
-		//Clean up the array a bit.
-
-		
+		foreach($guilds as $g)
+		{
+			echo $g['name'] . "<br>";
+			echo "<img src='https://cdn.discordapp.com/icons/{$g['id']}/{$g['icon']}.png'><br><br>";
+		}		
 
 		exit;
 
