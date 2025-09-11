@@ -211,7 +211,7 @@ switch($_SESSION['Application']['Step'])
 			</td>
 			<td valign='top' tdalign='center' style='padding:10px;'> 
 				<center>
-				<h3>Welcome, {$_SESSION['user']['username']}!</h3><br>
+				<h3>Welcome, {$_SESSION['user']['global_name']}!</h3><br>
 				<img src='https://cdn.discordapp.com/avatars/{$_SESSION['user']['id']}/{$_SESSION['user']['avatar']}.png'>
 				</center>
 			</td>
