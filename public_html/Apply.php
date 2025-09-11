@@ -62,14 +62,12 @@ else
 		$guilds = get_guilds();
 
 		//Show raw data and clean data with the guild name and icon
-		d($guilds);
+		//d($guilds);
 		foreach($guilds as $g)
 		{
 			echo $g['name'] . "<br>";
 			echo "<img src='https://cdn.discordapp.com/icons/{$g['id']}/{$g['icon']}.png'><br><br>";
 		}		
-
-		exit;
 
 		if($_SESSION['user']['id'] || $_SESSION['Application']['DiscordID'])
 		{
