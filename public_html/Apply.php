@@ -6,15 +6,13 @@ include( __DIR__ . '/../lib/discord.php' );
 include( __DIR__ . '/../lib/functions.php' );
 
 
-//Have a link to reset the process.
-echo "<div style='position:absolute; top:10px; right:10px;'><a href='reset.php'>Reset Application Process</a></div>";
-
 if(!isset($_SESSION['state']))
 {
 	gen_state();
 }
 
-
+//Have a link to reset the process.
+echo "<a href='reset.php'>Reset Application Process</a>";
 d($_SESSION);
 
 //Logic flow for the application process.
