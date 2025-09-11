@@ -1,4 +1,5 @@
 <?php
+session_destroy();
 session_start();
 include( __DIR__ . '/../lib/resources.php' );
 include( __DIR__ . '/../lib/discord.php' );
@@ -49,6 +50,10 @@ else
 		$guilds = get_guilds();
 
 		d($guilds);
+		//Clean up the array a bit.
+
+		
+
 		exit;
 
 		if($_SESSION['user']['id'] || $_SESSION['Application']['DiscordID'])
