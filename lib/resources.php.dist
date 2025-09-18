@@ -1,0 +1,27 @@
+<?php
+# Client ID from the Discord Developer Portal.
+# This requires an App Bot.
+# https://i.imgur.com/GHI2ts5.png (screenshot)
+$client_id = "XXXXXXXXXXXXXXXXXXX";
+
+# Client Secret from the Discord Developer Portal
+# https://i.imgur.com/r5dYANR.png (screenshot)
+$secret_id = "XXXXXXXXXXXXXXXXXXXXXXXXXXX";
+
+# BOT TOKEN
+# Super Secret.
+$bot_token = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+
+# SCOPES SEPARATED BY + SIGN
+# example: identify+email+guilds+connections
+# $scopes = "identify+email";
+$scopes = "identify+guilds";
+
+# REDIRECT URL
+# example: https://mydomain.com/includes/login.php
+# example: https://mydomain.com/test/includes/login.php
+//URL of the Login Page.
+$redirect_url = "http://trl.citadelspace.com/login.php";
+
+//URL of the Application page -- we primarily use this.
+$apply_redirect_url = "http://trl.citadelspace.com/Apply.php";

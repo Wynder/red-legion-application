@@ -6,6 +6,9 @@
  * 
  * Modified by Tealstone for The Red Legion.
  * 
+ * Follow Discord App Bot setup process here:
+ * https://github.com/MarkisDev/discordoauth
+ * 
  */
 
 // Setting the base url for API requests
