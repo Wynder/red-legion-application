@@ -12,7 +12,7 @@ if(!isset($_SESSION['state']))
 }
 
 //Have a link to reset the process.
-echo "<a href='reset.php'>Reset Application Process</a>";
+echo "<a href='reset.php'>Reset Application Process!</a>";
 
 d($_SESSION);
 
